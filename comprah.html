@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reserva de hotel</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #dcbb05;
+    }
+    
+    .container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      color: #555555;
+    }
+    
+    p {
+      color: #777777;
+    }
+    
+    .btn-primary {
+      background-color: #f1d12c;
+      border-color: #f1d12c;
+    }
+    
+    .btn-primary:hover {
+      background-color: #dcb707;
+      border-color: #dcb707;
+    }
+    
+    .form-check-label {
+      color: #555555;
+    }
+    
+    #confirmationModalLabel {
+      color: #555555;
+    }
+  </style>
+</head>
+<p><a href="alojamientos.html" class="btn btn-dark">Volver al inicio</a></p>
+
+
+<body>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="./assets/img/tequendama.png" alt="Hotel Tequendama" width="400">
+      </div>
+      <div class="col-md-6">
+        <h2>Hotel Tequendama</h2>
+        <p><strong>Ubicación:</strong> Bogotá, Colombia</p>
+        <p><strong>Descripción:</strong> Disfruta de una estancia de lujo en el reconocido Hotel Tequendama, ubicado en el corazón de Bogotá. Con su impresionante arquitectura, comodidades de primera clase y vistas panorámicas de la ciudad, es una opción perfecta para los viajeros que buscan calidad y elegancia.</p>
+        <p><strong>Precio:</strong> $200,000 COP por noche</p>
+        
+        <!-- Formulario de reserva -->
+        <form id="reservationForm" class="mt-3">
+          <h4>Realizar reserva</h4>
+          <div class="form-group">
+            <label for="numberOfNights">Número de noches</label>
+            <input type="number" class="form-control" id="numberOfNights" min="1" value="1" onchange="updatePrice()">
+          </div>
+          <div class="form-group">
+            <label for="numberOfPeople">Número de personas</label>
+            <input type="number" class="form-control" id="numberOfPeople" min="1" value="1" onchange="updatePrice()">
+          </div>
+          <div class="form-group">
+            <label for="roomCategory">Categoría de habitación</label>
+            <select class="form-control" id="roomCategory" onchange="updatePrice()">
+              <option value="estandar">Estándar</option>
+              <option value="deluxe">Deluxe</option>
+              <option value="suite">Suite</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cardNumber">Número de tarjeta de crédito</label>
+            <input type="text" class="form-control" id="cardNumber" required>
+          </div>
+          <div class="form-group">
+            <label for="cardName">Nombre en la tarjeta de crédito</label>
+            <input type="text" class="form-control" id="cardName" required>
+          </div>
+          <div class="form-group">
+            <label for="documentType">Tipo de documento</label>
+            <select class="form-control" id="documentType" required>
+              <option value="cedula">Cédula de ciudadanía</option>
+              <option value="pasaporte">Pasaporte</option>
+              <option value="nit">NIT</option>
+              <option value="otros">Otros</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="documentNumber">Número de documento</label>
+            <input type="text" class="form-control" id="documentNumber" required>
+          </div>
+          <div class="form-group">
+            <label for="reservationDate">Fecha de reserva</label>
+            <input type="date" class="form-control" id="reservationDate" required>
+          </div>
+          <div class="form-group">
+            <label for="totalPrice">Precio total</label>
+            <input type="text" class="form-control" id="totalPrice" disabled>
+          </div>
+          
+          <button type="button" class="btn btn-primary" onclick="confirmReservation()">Reservar</button>
+        </form>
+
+        <!-- Modal de confirmación -->
+        <div id="confirmationModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="confirmationModalLabel">Confirmación de reserva</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Tu reserva ha sido confirmada.</p>
+                <p><strong>Número de noches:</strong> <span id="confirmedNumberOfNights"></span></p>
+                <p><strong>Número de personas:</strong> <span id="confirmedNumberOfPeople"></span></p>
+                <p><strong>Categoría de habitación:</strong> <span id="confirmedRoomCategory"></span></p>
+                <p><strong>Precio total:</strong> <span id="confirmedTotalPrice"></span></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function updatePrice() {
+      var numberOfNights = document.getElementById("numberOfNights").value;
+      var numberOfPeople = document.getElementById("numberOfPeople").value;
+      var roomCategory = document.getElementById("roomCategory").value;
+      var basePrice = 200000;
+      var priceMultiplier = 1;
+      
+      // Determinar el multiplicador de precio basado en la categoría de habitación seleccionada
+      if (roomCategory === "deluxe") {
+        priceMultiplier = 1.5;
+      } else if (roomCategory === "suite") {
+        priceMultiplier = 2;
+      }
+      
+      var totalPrice = basePrice * numberOfNights * numberOfPeople * priceMultiplier;
+      
+      document.getElementById("totalPrice").value = "$" + totalPrice.toLocaleString() + " COP";
+    }
+    
+    function confirmReservation() {
+      var numberOfNights = document.getElementById("numberOfNights").value;
+      var numberOfPeople = document.getElementById("numberOfPeople").value;
+      var roomCategory = document.getElementById("roomCategory").value;
+      var totalPrice = document.getElementById("totalPrice").value;
+      
+      var cardNumber = document.getElementById("cardNumber").value;
+      var cardName = document.getElementById("cardName").value;
+      var documentType = document.getElementById("documentType").value;
+      var documentNumber = document.getElementById("documentNumber").value;
+      var reservationDate = document.getElementById("reservationDate").value;
+      
+      document.getElementById("confirmedNumberOfNights").textContent = numberOfNights;
+      document.getElementById("confirmedNumberOfPeople").textContent = numberOfPeople;
+      document.getElementById("confirmedRoomCategory").textContent = roomCategory;
+      document.getElementById("confirmedTotalPrice").textContent = totalPrice;
+      
+      // Mostrar el modal de confirmación
+      $("#confirmationModal").modal("show");
+      
+      // Generar el ticket de reserva
+      var ticket = "Hotel Tequendama - Ticket de Reserva\n\n";
+      ticket += "Número de noches: " + numberOfNights + "\n";
+      ticket += "Número de personas: " + numberOfPeople + "\n";
+      ticket += "Categoría de habitación: " + roomCategory + "\n";
+      ticket += "Precio total: " + totalPrice + "\n\n";
+      ticket += "Información del cliente:\n";
+      ticket += "Tarjeta de crédito: " + cardNumber + "\n";
+      ticket += "Nombre en la tarjeta: " + cardName + "\n";
+      ticket += "Tipo de documento: " + documentType + "\n";
+      ticket += "Número de documento: " + documentNumber + "\n";
+      ticket += "Fecha de reserva: " + reservationDate + "\n";
+      
+      // Imprimir el ticket en la consola del navegador
+      console.log(ticket);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BeeVentures</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <link rel="stylesheet" href="circle.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Cargar estilos -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+
+    <!-- Iniciar barra de navegacion -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">BeeVentures@company.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">316-8347940</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Cerrar barra de navegacion -->
+
+    <!-- Cabezal -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                <img src="assets/img/favicon.png" alt="Favicon" style="width: 120px; height: 120px;" class="mr-2">BeeVentures
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Viajes</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="alojamientos.html">Alojamientos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="carros.html">Carros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sesion.html">Iniciar sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="registro.html">Registrarse</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="tradu.html">
+                        <img src="assets/img/IN.png" alt="Icono" style="width: 20px; height: 20px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Cerrar cabezal -->
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Iniciar Banner que se desliza-->
+    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="./assets/img/banner_img_01.jpg" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left align-self-center">
+                                <h1 class="h1 text-success"><b>¿Quienes somos?</b></h1>
+                                <h3 class="h2">Descubre el mundo con nosotros</h3>
+                                <p>
+                                    Agencia de Viajes BeeVentures es una agencia especializada en brindar experiencias de viaje inolvidables. 
+                                    Nuestro objetivo es hacer realidad tus sueños de explorar nuevos destinos y vivir aventuras únicas. 
+                                    Te ofrecemos paquetes turísticos personalizados, alojamiento de calidad y un servicio excepcional. 
+                                    ¡Descubre el mundo con nosotros y crea recuerdos para toda la vida!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="./assets/img/banner_img_02.jpg" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left">
+                                <h1 class="h1">Agencia de Viajes BeeVentures</h1>
+                                <h3 class="h2">Descubre el mundo con nosotros</h3>
+                                <p>
+                                    Te ofrecemos los mejores destinos y paquetes turísticos para que disfrutes de unas vacaciones inolvidables. 
+                                    Contamos con un equipo de expertos en viajes dispuestos a brindarte la mejor experiencia. ¡Reserva ahora y vive nuevas aventuras!
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="./assets/img/banner_img_03.jpg" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left">
+                                <h1 class="h1">Encuentra viajes internacionales todo pago a un módico precio.</h1>
+                                <h3 class="h2">Desde $4.000.000</h3>
+                                <p>
+                                    Te ofrecemos una amplia selección de destinos y paquetes de viaje a precios accesibles para que puedas disfrutar de tus vacaciones sin preocuparte por el presupuesto. Nuestro objetivo es brindarte experiencias inolvidables sin que tengas que gastar una fortuna.
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+    
+    <!-- Fin de Banner -->
+
+
+    <!-- Iniciar categorias de la semaqna -->
+    <section class="container py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Ofertas del Mes</h1>
+                <p>
+                    Descubre nuestras increíbles ofertas y promociones para tus próximas vacaciones.
+                    ¡No te lo puedes perder!
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="about.html">
+                    <img src="./assets/img/turi1.png" class="img-fluid border">
+                </a>
+                <h5 class="text-center mt-3 mb-3"><span class="text-yellow">Oferta 1:</span> Playa Paradisíaca</h5>
+                <p class="text-center">
+                    <b>Descripción:</b> Disfruta de una semana en una hermosa playa paradisíaca con aguas cristalinas y arena blanca. Relájate bajo el sol y sumérgete en un mar de tranquilidad.
+                    <br>
+                    <b>Ubicación:</b> Cartagena, Colombia.
+                    <br>
+                    <b>Precio:</b> $1,500,000 COP
+                </p>
+                <p class="text-center">
+                    <a class="btn btn-success btn-particles" href="about.html">Descubre</a>
+                </p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="about.html">
+                    <img src="./assets/img/turi2.png" class="img-fluid border">
+                </a>
+                <h5 class="text-center mt-3 mb-3"><span class="text-yellow">Oferta 2:</span> Aventura en la Selva</h5>
+                <p class="text-center">
+                    <b>Descripción:</b> Embárcate en una emocionante aventura en la selva amazónica. Explora exuberantes paisajes, descubre la flora y fauna únicas y vive experiencias inolvidables en plena naturaleza.
+                    <br>
+                    <b>Ubicación:</b> Leticia, Colombia.
+                    <br>
+                    <b>Precio:</b> $2,200,000 COP
+                </p>
+                <p class="text-center">
+                    <a class="btn btn-success btn-particles" href="about.html">Descubre</a>
+                </p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="about.html">
+                    <img src="./assets/img/turi3.png" class="img-fluid border">
+                </a>
+                <h5 class="text-center mt-3 mb-3"><span class="text-yellow">Oferta 3:</span> Viaje a Miami</h5>
+                <p class="text-center">
+                    <b>Descripción:</b> Descubre la vibrante ciudad de Miami y sumérgete en su ambiente multicultural. Disfruta de sus playas, sus famosos centros comerciales y su animada vida nocturna.
+                    <br>
+                    <b>Ubicación:</b> Miami, Estados Unidos.
+                    <br>
+                    <b>Precio:</b> $4,500,000 COP
+                </p>
+                <p class="text-center">
+                    <a class="btn btn-success btn-particles" href="about.html">Descubre</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <!-- Fin de las categorias de la semana  -->
+
+
+    <!-- Iniciar lugares esclusivos -->
+    <section class="bg-light">
+        <div class="container py-5">
+            <div class="row text-center py-3">
+                <div class="col-lg-6 m-auto">
+                    <h1 class="h1">Lugares Exclusivos</h1>
+                    <p>
+                        Descubre nuestros destinos más exclusivos, valorados con 4 o 5 estrellas, para una experiencia de viaje inigualable.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="about.html">
+                            <img src="./assets/img/ec1.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                </li>
+                                <li class="text-muted text-right">$5,000,000 COP</li>
+                            </ul>
+                            <a href="about.html" class="h2 text-decoration-none text-dark">Playa del Paraíso</a>
+                            <p class="card-text">
+                                Disfruta de una semana en una playa paradisíaca de aguas cristalinas y arena blanca. Descansa en exclusivos resorts y déjate llevar por la tranquilidad y belleza del entorno.
+                            </p>
+                            <p class="text-muted">Ubicación: Bora Bora, Polinesia Francesa</p>
+                            <p class="text-center">
+                                <a class="btn btn-success btn-particles" href="about.html">Descubre</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="about.html">
+                            <img src="./assets/img/ec2.png" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                </li>
+                                <li class="text-muted text-right">$8,500,000 COP</li>
+                            </ul>
+                            <a href="about.html" class="h2 text-decoration-none text-dark">Safari en la Reserva Privada</a>
+                            <p class="card-text">
+                                Embárcate en un safari exclusivo en una reserva privada. Descubre la majestuosidad de la fauna salvaje, alojándote en lujosos lodges y disfrutando de experiencias únicas en plena naturaleza.
+                            </p>
+                            <p class="text-muted">Ubicación: Sabi Sands, Sudáfrica</p>
+                            <p class="text-center">
+                                <a class="btn btn-success btn-particles" href="about.html">Descubre</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="about.html">
+                            <img src="./assets/img/ec3.png" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                </li>
+                                <li class="text-muted text-right">$6,200,000 COP</li>
+                            </ul>
+                            <a href="about.html" class="h2 text-decoration-none text-dark">Lujo en la Ciudad</a>
+                            <p class="card-text">
+                                Vive una experiencia de lujo en una de las ciudades más cosmopolitas del mundo. Disfruta de hoteles de clase mundial, restaurantes de alta cocina y los mejores espectáculos en un entorno urbano sofisticado.
+                            </p>
+                            <p class="text-muted">Ubicación: Dubai, Emiratos Árabes Unidos</p>
+                            <p class="text-center">
+                                <a class="btn btn-success btn-particles" href="about.html">Descubre</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <head>
+              
+                <style>
+                    .fixed-button {
+                        position: fixed;
+                        bottom: 20px; /* Ajustar la posición vertical  */
+                        right: 20px; /* Ajustar la posición horizontal  */
+                        z-index: 9999; /* Boton encima de los elementos */
+                    }
+                </style>
+                
+            </head>
+            
+            <body>
+                <!-- Aquí va el contenido de tu página -->
+                <a href="ayuda.html">
+                <button class="fixed-button" style="width: 50px; height: 50px; border-radius: 50%; background-color: #ffc107; border: none;">
+                    <span style="font-size: 24px;">?</span>
+                </button>
+            </body>
+        </a>
+        </div>
+        
+    </section>
+   
+
+
+    
+    <!-- Fin de los productos esclusivos -->
+
+
+    <!-- Iniciar pie de pagina -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">BeeVentures</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            123 Consectetur at ligula 10660
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:010-020-0340">316-8347940</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="Beeventures@company.com">Beeventures@company.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2023 BeeVentures
+                            | Designed by <a rel="sponsored" href="gracias.html" target="_blank">Coroticos</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compra de carro Toyota Corolla</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #dcbb05;
+    }
+    
+    .container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      color: #555555;
+    }
+    
+    p {
+      color: #777777;
+    }
+    
+    .btn-primary {
+      background-color: #f1d12c;
+      border-color: #f1d12c;
+    }
+    
+    .btn-primary:hover {
+      background-color: #dcb707;
+      border-color: #dcb707;
+    }
+    
+    .form-check-label {
+      color: #555555;
+    }
+    
+    #loginModalLabel {
+      color: #555555;
+    }
+    
+    #successModalLabel {
+      color: #555555;
+    }
+  </style>
+</head>
+<p><a href="carros.html" class="btn btn-dark">Volver al inicio</a></p>
+
+
+<body>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="./assets/img/toyota.jpg" alt="Toyota Corolla" width="400">
+      </div>
+      <div class="col-md-6">
+        <h2>Toyota Corolla</h2>
+        <p><strong>Descripción:</strong> El Toyota Corolla es un sedán compacto conocido por su confiabilidad y eficiencia en el consumo de combustible.</p>
+        <ul class="car-features">
+          <li>Pasajeros: 5</li>
+          <li>Baúl: Mediano</li>
+          <li>Transmisión: Manual</li>
+          <li>Precio: $200,000 COP por día</li>
+        </ul>
+        
+        <!-- Botón para comprar -->
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#paymentMethods">Comprar</button>
+        
+        <!-- Opciones de método de compra -->
+        <div id="paymentMethods" class="collapse mt-3">
+          <h4>Elige un método de compra</h4>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard" checked>
+            <label class="form-check-label" for="creditCard">Tarjeta de crédito</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="paymentMethod" id="paypal" value="paypal">
+            <label class="form-check-label" for="paypal">PayPal</label>
+          </div>
+
+          <!-- Formulario de datos de tarjeta de crédito -->
+          <form id="creditCardForm" class="mt-3">
+            <h5>Ingresa los datos de tu tarjeta de crédito</h5>
+            <div class="form-group">
+              <label for="cardNumber">Número de tarjeta</label>
+              <input type="text" class="form-control" id="cardNumber" placeholder="Ingresa el número de tu tarjeta">
+            </div>
+            <div class="form-group">
+              <label for="cardName">Nombre en la tarjeta</label>
+              <input type="text" class="form-control" id="cardName" placeholder="Ingresa tu nombre como aparece en la tarjeta">
+            </div>
+            <div class="form-group">
+              <label for="cardExpiration">Fecha de expiración</label>
+              <input type="text" class="form-control" id="cardExpiration" placeholder="MM/AA">
+            </div>
+            <div class="form-group">
+              <label for="cardCVV">CVV</label>
+              <input type="text" class="form-control" id="cardCVV" placeholder="Ingresa el código CVV">
+            </div>
+            
+            <!-- Agregando información adicional -->
+            <div class="form-group">
+              <label for="documentType">Tipo de documento</label>
+              <select class="form-control" id="documentType">
+                <option value="cc">Cédula de ciudadanía</option>
+                <option value="ti">Tarjeta de identidad</option>
+                <option value="pp">Pasaporte</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="documentNumber">Número de documento</label>
+              <input type="text" class="form-control" id="documentNumber" placeholder="Ingresa tu número de documento">
+            </div>
+            
+            <button type="button" class="btn btn-primary" onclick="buy()">Comprar</button>
+          </form>
+
+          <!-- Modal de éxito -->
+          <div id="successModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="successModalLabel">¡Compra exitosa!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Tu compra ha sido procesada con éxito.</p>
+                  <p>Precio: $200,000 COP por día</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function buy() {
+      // Realizar la lógica de compra aquí
+      
+      // Muestra el modal de éxito
+      $("#successModal").modal("show");
+    }
+  </script>
+</body>
+</html>

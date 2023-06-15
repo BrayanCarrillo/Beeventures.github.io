@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.edit-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.edit-btn {
+  background-color: #f1d12c;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.logout-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Mi Perfil</h1>
+  <div class="profile-info">
+    <img class="profile-pic" src="assets/img/usu.png" alt="Foto de perfil">
+    <h3 id="current-username">Nombre de usuario actual</h3>
+  </div>
+
+  <label for="profile-pic-upload" class="edit-btn">Cambiar foto de perfil</label>
+  <input type="file" id="profile-pic-upload" style="display:none;">
+  
+  <h2>Editar Perfil</h2>
+  <input type="text" class="edit-input" id="username" placeholder="Nombre de usuario">
+  <input type="email" class="edit-input" id="email" placeholder="Correo electrónico">
+  <input type="text" class="edit-input" id="confirmation-code" placeholder="Código de confirmación">
+  <input type="password" class="edit-input" id="password" placeholder="Contraseña">
+  <button class="edit-btn" onclick="updateProfile()">Guardar cambios</button>
+  <p id="update-success" class="success-message" style="display: none;">Los cambios han sido realizados correctamente.</p>
+  
+  <h2>Nacionalidad</h2>
+  <select class="edit-input" id="nationality">
+    <option value="USA">Estados Unidos</option>
+    <option value="UK">Reino Unido</option>
+    <option value="Canada">Canadá</option>
+    <option value="Mexico">México</option>
+    <option value="Colombia">Colombia</option>
+    <option value="Spain">España</option>
+  </select>
+  
+  <h2>Tipo de Viajero</h2>
+  <input type="checkbox" id="adventure" name="adventure" value="adventure">
+  <label for="adventure">Aventurero</label><br>
+  <input type="checkbox" id="relaxation" name="relaxation" value="relaxation">
+  <label for="relaxation">Relajación</label><br>
+  <input type="checkbox" id="culture" name="culture" value="culture">
+  <label for="culture">Cultura</label><br>
+
+  <h2>Cambiar Contraseña</h2>
+  <input type="password" class="edit-input" id="current-password" placeholder="Contraseña actual">
+  <input type="password" class="edit-input" id="new-password" placeholder="Nueva contraseña">
+  <button class="edit-btn" onclick="changePassword()">Cambiar contraseña</button>
+  <p id="password-success" class="success-message" style="display: none;">La contraseña ha sido cambiada correctamente.</p>
+
+  <button class="logout-btn" onclick="window.location.href='about.html'">Salir</button>
+</div>
+
+<script>
+  document.getElementById('profile-pic-upload').addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementsByClassName('profile-pic')[0].src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  function updateProfile() {
+    var username = document.getElementById('username').value;
+    var email = document.getElementById('email').value;
+    var confirmationCode = document.getElementById('confirmation-code').value;
+    var password = document.getElementById('password').value;
+
+    // Realizar las validaciones y el envío de los datos actualizados al servidor
+    // ...
+
+    // Mostrar el mensaje de éxito
+    document.getElementById('update-success').style.display = 'block';
+    document.getElementById('current-username').innerText = username;
+  }
+
+  function changePassword() {
+    var currentPassword = document.getElementById('current-password').value;
+    var newPassword = document.getElementById('new-password').value;
+
+    // Realizar las validaciones y el cambio de contraseña en el servidor
+    // ...
+
+    // Mostrar el mensaje de éxito
+    document.getElementById('password-success').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

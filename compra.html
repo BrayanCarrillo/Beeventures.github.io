@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compra de oferta 1</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #dcbb05;
+    }
+    
+    .container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      color: #555555;
+    }
+    
+    p {
+      color: #777777;
+    }
+    
+    .btn-primary {
+      background-color: #f1d12c;
+      border-color: #f1d12c;
+    }
+    
+    .btn-primary:hover {
+      background-color: #dcb707;
+      border-color: #dcb707;
+    }
+    
+    .form-check-label {
+      color: #555555;
+    }
+    
+    #loginModalLabel {
+      color: #555555;
+    }
+    
+    #successModalLabel {
+      color: #555555;
+    }
+  </style>
+</head>
+<p><a href="about.html" class="btn btn-dark">Volver al inicio</a></p>
+
+
+<body>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="./assets/img/turi1.png" alt="Oferta 1" width="400">
+      </div>
+      <div class="col-md-6">
+        <h2>Oferta 1: Playa Paradisíaca</h2>
+        <p><strong>Descripción:</strong> Disfruta de una semana en una hermosa playa paradisíaca con aguas cristalinas y arena blanca. Relájate bajo el sol y sumérgete en un mar de tranquilidad.</p>
+        <p><strong>Ubicación:</strong> Cartagena, Colombia.</p>
+        <p><strong>Precio:</strong> $1,500,000 COP</p>
+        
+        <!-- Botón para elegir método de compra -->
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#paymentMethods">Comprar</button>
+        
+        <!-- Opciones de método de compra -->
+        <div id="paymentMethods" class="collapse mt-3">
+          <h4>Elige un método de compra</h4>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard" checked>
+            <label class="form-check-label" for="creditCard">Tarjeta de crédito</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="paymentMethod" id="paypal" value="paypal">
+            <label class="form-check-label" for="paypal">PayPal</label>
+          </div>
+
+          <!-- Formulario de datos de tarjeta de crédito -->
+          <form id="creditCardForm" class="mt-3">
+            <h5>Ingresa los datos de tu tarjeta de crédito</h5>
+            <div class="form-group">
+              <label for="cardNumber">Número de tarjeta</label>
+              <input type="text" class="form-control" id="cardNumber" placeholder="Ingresa el número de tu tarjeta">
+            </div>
+            <div class="form-group">
+              <label for="cardName">Nombre en la tarjeta</label>
+              <input type="text" class="form-control" id="cardName" placeholder="Ingresa tu nombre como aparece en la tarjeta">
+            </div>
+            <div class="form-group">
+              <label for="cardExpiration">Fecha de expiración</label>
+              <input type="text" class="form-control" id="cardExpiration" placeholder="MM/AA">
+            </div>
+            <div class="form-group">
+              <label for="cardCVV">CVV</label>
+              <input type="text" class="form-control" id="cardCVV" placeholder="Ingresa el código CVV">
+            </div>
+            
+            <!-- Agregando información adicional -->
+            <div class="form-group">
+              <label for="documentType">Tipo de documento</label>
+              <select class="form-control" id="documentType">
+                <option value="cc">Cédula de ciudadanía</option>
+                <option value="ti">Tarjeta de identidad</option>
+                <option value="pp">Pasaporte</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="documentNumber">Número de documento</label>
+              <input type="text" class="form-control" id="documentNumber" placeholder="Ingresa tu número de documento">
+            </div>
+            <div class="form-group">
+              <label for="airline">Aerolínea</label>
+              <select class="form-control" id="airline" onchange="loadFlightTimes()">
+                <option value="avianca">Avianca</option>
+                <option value="latam">LATAM Airlines</option>
+                <option value="copa">Copa Airlines</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="flightTime">Horario de vuelo</label>
+              <select class="form-control" id="flightTime">
+                <!-- Los horarios de vuelo se mostrarán según la aerolínea seleccionada -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="numberOfPeople">Número de personas</label>
+              <input type="number" class="form-control" id="numberOfPeople" min="1" value="1">
+            </div>
+            
+            <button type="button" class="btn btn-primary" onclick="buy()">Comprar</button>
+          </form>
+
+          <!-- Modal de éxito -->
+          <div id="successModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="successModalLabel">¡Compra exitosa!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Tu compra ha sido procesada con éxito.</p>
+                  <p>Horario de vuelo: <span id="selectedFlightTime"></span></p>
+                  <p>Número de personas: <span id="selectedNumberOfPeople"></span></p>
+                  <p>Precio total: <span id="totalPrice"></span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function loadFlightTimes() {
+      var airline = document.getElementById("airline").value;
+      var flightTimeSelect = document.getElementById("flightTime");
+      flightTimeSelect.innerHTML = "";
+      
+      // Agrega los horarios de vuelo según la aerolínea seleccionada
+      if (airline === "avianca") {
+        flightTimeSelect.innerHTML = `
+          <option value="8am">8:00 AM</option>
+          <option value="12pm">12:00 PM</option>
+          <option value="4pm">4:00 PM</option>
+        `;
+      } else if (airline === "latam") {
+        flightTimeSelect.innerHTML = `
+          <option value="9am">9:00 AM</option>
+          <option value="1pm">1:00 PM</option>
+          <option value="5pm">5:00 PM</option>
+        `;
+      } else if (airline === "copa") {
+        flightTimeSelect.innerHTML = `
+          <option value="10am">10:00 AM</option>
+          <option value="2pm">2:00 PM</option>
+          <option value="6pm">6:00 PM</option>
+        `;
+      }
+    }
+    
+    function buy() {
+      var selectedFlightTime = document.getElementById("flightTime").value;
+      var selectedNumberOfPeople = document.getElementById("numberOfPeople").value;
+      var totalPrice = 1500000 * selectedNumberOfPeople;
+      
+      // Actualiza los valores en el modal de éxito
+      document.getElementById("selectedFlightTime").textContent = selectedFlightTime;
+      document.getElementById("selectedNumberOfPeople").textContent = selectedNumberOfPeople;
+      document.getElementById("totalPrice").textContent = "$" + totalPrice + " COP";
+      
+      // Muestra el modal de éxito
+      $("#successModal").modal("show");
+    }
+  </script>
+</body>
+</html>
+

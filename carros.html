@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BeeVentures - Carros</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- cargar styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <style>
+        .highlight-title {
+            background: linear-gradient(to right, purple, gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- inicio barra de navegacion -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="Beeventures">Beeventures@gmail.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">316-8347940</a>
+                </div>
+               
+            </div>
+        </div>
+    </nav>
+    <!-- Cerrar barra de navegacion -->
+
+
+    <!-- Cabezal -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                <img src="assets/img/favicon.png" alt="Favicon" style="width: 120px; height: 120px;" >
+            </a>
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                BeeVentures
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav"
+                aria-controls="templatemo_main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-fw fa-stream text-success"></i>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="alojamientos.html">Alojamientos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Viajes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="usuario.html">
+                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="cesta.html">
+                        <i class="fa fa-fw fa-shopping-cart text-dark mr-3"></i>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="tradu.html">
+                        <img src="assets/img/IN.png" alt="Icono" style="width: 20px; height: 20px;">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Cerrar cabezal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="templatemo_search" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Buscar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="get">
+                        <input type="text" class="form-control" id="recipient-name" placeholder="Buscar aquí...">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Banner que se desliza -->
+    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="./assets/img/carro.png" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left align-self-center">
+                                <h1 class="highlight-title">Encuentra el carro perfecto para ti</h1>
+                                <h1 class="h1">BeeVentures</h1>
+                                <p>
+                                    Tenemos una amplia selección de carros para que puedas elegir el que más se ajuste a tus necesidades y preferencias.
+                                </p>
+                                <div class="banner-buttons">
+                              
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="./assets/img/a.png" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left">
+                                <h1 class="h1">Alquiler de carros de calidad</h1>
+                                <p>
+                                    Nuestros carros están en excelente estado y cuentan con todas las comodidades y características que necesitas para disfrutar de un viaje cómodo y seguro.
+                                </p>
+                                <div class="banner-buttons">
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="./assets/img/renta.jpg" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left">
+                                <h1 class="h1">Explora y descubre nuevos destinos</h1>
+                                <p>
+                                    Con nuestros carros, puedes recorrer nuevos lugares y descubrir destinos increíbles con total libertad y flexibilidad.
+                                </p>
+                                <div class="banner-buttons">
+                       
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+    <!-- fin de banner -->
+
+    <section class="container py-5">
+        <div class="row text-center pt-5 pb-lg-4">
+            <div class="col-lg-6 mx-auto">
+                <h1 class="h1">Carros destacados</h1>
+                <p>
+                    Estos son algunos de nuestros carros más populares y recomendados por nuestros clientes.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+    
+            <!-- iniciiar categoria 1 -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="#">
+                        <img src="assets/img/toyota.jpg" class="card-img-top" alt="Car Category" style="max-width: 100%; height: auto;">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Toyota Corolla</h5>
+                        <p class="card-text">
+                            El Toyota Corolla es un sedán compacto conocido por su confiabilidad y eficiencia en el consumo de combustible.
+                        </p>
+                        <ul class="car-features">
+                            <li>Pasajeros: 5</li>
+                            <li>Baúl: Mediano</li>
+                            <li>Transmisión: Manual</li>
+                            <li>Precio: $200,000 COP por día</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="compraC.html" class="btn btn-primary" style="background-color: #f1d12c;">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- objeto 2 -->
+    
+            +
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img src="assets/img/bmw.png" class="card-img-top" alt="Car Category" style="max-width: 100%; height: auto;">
+                    <div class="card-body">
+                        <h5 class="card-title">BMW Serie 3</h5>
+                        <p class="card-text">
+                            El BMW Serie 3 es un sedán de lujo que combina un diseño elegante con un rendimiento potente y tecnología avanzada.
+                        </p>
+                        <ul class="car-features">
+                            <li>Pasajeros: 5</li>
+                            <li>Baúl: Amplio</li>
+                            <li>Transmisión: Automática</li>
+                            <li>Precio: $350,000 COP por día</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary" style="background-color: #f1d12c;">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Objeto 3 -->
+    
+            <!-- objeto 4 -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img src="assets/img/ford.png" class="card-img-top" alt="Car Category" style="max-width: 100%; height: auto;">
+                    <div class="card-body">
+                        <h5 class="card-title">Ford Mustang</h5>
+                        <p class="card-text">
+                            El Ford Mustang es un automóvil deportivo legendario con un diseño icónico y un rendimiento excepcional.
+                        </p>
+                        <ul class="car-features">
+                            <li>Pasajeros: 4</li>
+                            <li>Baúl: Pequeño</li>
+                            <li>Transmisión: Automática</li>
+                            <li>Precio: $300,000 COP por día</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary" style="background-color: #f1d12c;">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+            <!-- fin de objeto 4 -->
+    
+        </div>
+    </section>
+    
+    
+    <!-- Fin de las categorias del mes -->
+
+
+    <!-- lista de carros-->
+    <section class="bg-light">
+        <div class="container py-5">
+            <div class="row text-center py-3">
+                <div class="col-lg-6 mx-auto">
+                    <h1 class="h1" id="car-list">Nuestros carros</h1>
+                    <p>
+                        Explora nuestra amplia selección de carros disponibles para alquiler.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+    
+                <!-- carro 1 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card car-item">
+                        <div class="card-header bg-transparent border-bottom-0">
+                            <img src="assets/img/image.png" class="card-img-top" alt="Car Category" style="max-width: 100%; height: auto;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Toyota Corolla</h5>
+                            <p class="card-text">
+                                El Toyota Corolla es un automóvil compacto ampliamente reconocido por su confiabilidad y eficiencia.
+                            </p>
+                            <div class="car-details">
+                                <ul>
+                                    <li>Pasajeros: 4</li>
+                                    <li>Baúl: Grande</li>
+                                    <li>Transmisión: Automática</li>
+                                    <li>Precio: $250.000 por día</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-primary" style="background-color: #f1d12c;">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- fin carro 1 -->
+    
+                <!-- carro 2 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card car-item">
+                        <div class="card-header bg-transparent border-bottom-0">
+                            <img src="assets/img/mazda.jpg" class="card-img-top" alt="Car Category" style="max-width: 100%; height: auto;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Mazda CX-5</h5>
+                            <p class="card-text">
+                                La Mazda CX-5 es una SUV compacta que combina estilo, comodidad y rendimiento en un solo paquete.
+                            </p>
+                            <div class="car-details">
+                                <ul>
+                                    <li>Pasajeros: 5</li>
+                                    <li>Baúl: Mediano</li>
+                                    <li>Transmisión: Manual</li>
+                                    <li>Precio: $300.000 por día</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-primary" style="background-color: #f1d12c;">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- fin carro 2 -->
+    
+                <!-- carro 3 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card car-item">
+                        <div class="card-header bg-transparent border-bottom-0">
+                            <img src="assets/img/spark.png" class="card-img-top" alt="Car Category" style="max-width: 100%; height: auto;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Chevrolet Spark GT</h5>
+                            <p class="card-text">
+                                El Chevrolet Spark GT es un compacto ágil y económico, perfecto para moverse por la ciudad.
+                            </p>
+                            <div class="car-details">
+                                <ul>
+                                    <li>Pasajeros: 4</li>
+                                    <li>Baúl: Pequeño</li>
+                                    <li>Transmisión: Automática</li>
+                                    <li>Precio: $150.000 por día</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-primary" style="background-color: #f1d12c;">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin carro 3 -->
+    
+            </div>
+        </div>
+    </section>
+    
+    <!-- fin lista carros-->
+
+
+    <!-- Testimonios -->
+    <section class="bg-white py-5">
+        <div class="container py-5">
+            <div class="row text-center pb-4">
+                <div class="col-lg-6 mx-auto">
+                    <h1 class="h1">Testimonios de nuestros clientes</h1>
+                    <p>
+                        Estos son algunos de los testimonios de nuestros clientes satisfechos.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div id="templatemo-slide-testimonial" class="slide carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonials">
+                                    <blockquote>
+                                        <p class="quote">
+                                            "¡Excelente servicio y carros de calidad! Recomiendo BeeVentures para alquilar carros en tus viajes."
+                                        </p>
+                                        <cite class="author">- Cliente 1</cite>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonials">
+                                    <blockquote>
+                                        <p class="quote">
+                                            "Me encantó el carro que alquilé con BeeVentures. Estaba en perfectas condiciones y pude disfrutar de un viaje increíble."
+                                        </p>
+                                        <cite class="author">- Cliente 2</cite>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonials">
+                                    <blockquote>
+                                        <p class="quote">
+                                            "El proceso de reserva fue rápido y sencillo. El personal de BeeVentures fue muy amable y me brindó todas las indicaciones necesarias."
+                                        </p>
+                                        <cite class="author">- Cliente 3</cite>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#templatemo-slide-testimonial" role="button" data-bs-slide="prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        <a class="carousel-control-next" href="#templatemo-slide-testimonial" role="button" data-bs-slide="next">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin testimonios -->
+
+
+    <!-- Iniciar contacto-->
+    <section id="contact" class="bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto text-center">
+                    <h1 class="h1">Contáctanos</h1>
+                    <p>
+                        Si tienes alguna pregunta o deseas realizar una reserva, no dudes en ponerte en contacto con nosotros.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form action="#" method="post">
+                        <div class="form-row">
+                            <div class="col-12 col-md-6 mb-4">
+                                <input type="text" class="form-control" placeholder="Nombre" required>
+                            </div>
+                            <div class="col-12 col-md-6 mb-4">
+                                <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <textarea class="form-control" rows="5" placeholder="Mensaje" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin de contacto -->
+
+
+    <!-- Iniciar pie de pagina -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4 class="h4">BeeVentures</h4>
+                    <p>
+                        Empresa de alquiler de carros.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <h4 class="h4">Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>
+                        &copy; 2023 BeeVentures. Todos los derechos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- terminar pie de pagina-->
+
+    <!-- JavaScripts -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>
