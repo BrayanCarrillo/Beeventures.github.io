@@ -1,0 +1,111 @@
+/* Estilos generales */
+body {
+    background-color: #F5F5F5;
+    color: #000000;
+}
+
+/* Barra de navegación superior */
+#templatemo_nav_top {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+#templatemo_nav_top a {
+    color: #FFFFFF;
+}
+
+/* Cabezal */
+.navbar {
+    background-color: #FFFFFF;
+}
+
+.navbar-brand {
+    color: #228B22;
+}
+
+.navbar-nav .nav-link {
+    color: #000000;
+}
+
+/* Banner */
+#template-mo-zay-hero-carousel {
+    background-color: #FFFFFF;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    color: #228B22;
+}
+
+/* Categorías de la semana */
+.container.py-5 {
+    background-color: #FFFFFF;
+}
+
+.text-yellow {
+    color: #228B22;
+}
+
+.btn-success {
+    background-color: #228B22;
+    border-color: #228B22;
+}
+
+/* Lugares exclusivos */
+.bg-light {
+    background-color: #F5F5F5;
+}
+
+.card {
+    background-color: #FFFFFF;
+}
+
+.card-img-top {
+    background-color: #F5F5F5;
+}
+
+/* Corrección para daltonismo */
+/* Daltonismo - Rojo-verde */
+body,
+.navbar,
+.carousel-control-prev,
+.carousel-control-next,
+.container.py-5,
+.card-img-top {
+    background-color: #F5F5F5;
+}
+
+.navbar,
+.carousel-control-prev,
+.carousel-control-next,
+.container.py-5,
+.text-yellow,
+.btn-success,
+.bg-light {
+    color: #000000;
+}
+
+/* Daltonismo - Azul-amarillo */
+body,
+#templatemo_nav_top,
+.navbar-brand,
+.navbar-nav .nav-link,
+.card {
+    background-color: #FFFFFF;
+}
+
+#templatemo_nav_top,
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #000000;
+}
+
+/* Daltonismo - Negro-blanco */
+body {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.card {
+    background-color: #F5F5F5;
+}
